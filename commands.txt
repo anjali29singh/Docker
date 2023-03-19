@@ -1,0 +1,33 @@
+to check docker images -> docker images
+
+docker run <image name> -> to run image 
+docker run -d <image name>   -> start docker container in detached mode 
+
+to restart container -> docker stop <id of container>
+docker ps -> show all container and images in docker
+
+//pulls repository to local environment 
+docker pull <name >
+
+//docker pull and run 
+docker run <name>:version 
+
+//port binding 
+docker run -p3000:<port of container> <name>
+
+docker ps -a  //all container list
+
+docker images //show all images present locally 
+
+//commands for troubleshooting 
+docker logs <container id>
+        or 
+docker logs <container name>
+
+//get the terminal of running container
+docker exec -it <container id> /bin/bash
+        or
+docker exec -it <container name> /bin/bash
+
+docker run <image> is to create new container
+docker start <container id> to restart container or stop container (docker stop <container id>)
