@@ -42,6 +42,17 @@ docker start <container id> to restart container or stop container (docker stop 
 
 docker kill <container_name > -> stops running container
 
+#to kill multiple running docker containers
+
+docker kill ${ docker ps -q }
+
 docker rm 
 
-cat /etc/issue
+cat /etc/issuea
+
+docker inspect -> provides detail information of constructs controlled by docker in json array format
+
+docker pause -> freeze container
+
+docker unpause 
+
