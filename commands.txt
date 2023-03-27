@@ -31,6 +31,7 @@ docker logs <container id>
 docker logs <container name>
 
 //get the terminal of running container
+
 docker exec -it <container id> /bin/bash
         or
 docker exec -it <container name> /bin/bash
@@ -42,3 +43,5 @@ docker start <container id> to restart container or stop container (docker stop 
 docker kill <container_name > -> stops running container
 
 docker rm 
+
+cat /etc/issue
