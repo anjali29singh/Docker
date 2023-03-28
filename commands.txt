@@ -1,36 +1,49 @@
-to check docker images -> docker images
+# display list of images
+docker images
+docker image list 
 
-
-//start docker container  with docker runnning in it connected to host docker daemon 
+#start docker container  with docker runnning in it connected to host docker daemon 
 
 docker run -ti -v /var/run/docker.sock:/var/run/docker.sock --privileged --rm --name docker-host docker:18.06.1-ce 
 
-docker run <image name> -> to run image 
-docker run -d <image name>   -> start docker container in detached mode 
+# docker create a new container and runs 
+docker run <image name> 
 
-to restart container -> docker stop <id of container>
-docker ps -> show all container and images in docker
+#rus image  in a detach mode 
+docker run -d <image name>
 
-//pulls repository to local environment 
+# to restart container 
+docker stop <id of container>
+
+#show all running containers 
+docker ps 
+
+#pulls repository to local environment 
 docker pull <name >
 
-//docker pull and run 
+#docker pull and run 
 docker run <name>:version 
 
-//port binding 
+#start command is used to run already created containers
+
+docker start <container_name or id>
+
+
+#docker run starts new container and docker exec run something on existing container
+
+#port binding 
 docker run -p3000:<port of container> <name>
 
-docker ps -a  //all container list
+# show all containers(running +stopped)
+docker ps -a
 
-docker images //show all images present locally 
-
-//commands for troubleshooting 
+#commands for troubleshooting 
 
 docker logs <container id>
         or 
 docker logs <container name>
 
-//get the terminal of running container
+#get the terminal of running container
 
 docker exec -it <container id> /bin/bash
         or
@@ -39,8 +52,8 @@ docker exec -it <container name> /bin/bash
 docker run <image> is to create new container
 docker start <container id> to restart container or stop container (docker stop <container id>)
 
-
-docker kill <container_name > -> stops running container
+# stops running container
+docker kill <container_name >
 
 #to kill multiple running docker containers
 
@@ -48,11 +61,18 @@ docker kill ${ docker ps -q }
 
 docker rm 
 
-cat /etc/issuea
+cat /etc/issue
 
-docker inspect -> provides detail information of constructs controlled by docker in json array format
 
-docker pause -> freeze container
+docker inspect 
+
+#freeze container
+docker pause 
 
 docker unpause 
 
+# remove image
+docker rmi 
+
+#remove all stopped container
+docker prune
