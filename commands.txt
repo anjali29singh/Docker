@@ -76,3 +76,43 @@ docker rmi
 
 #remove all stopped container
 docker prune
+
+//docker mount  :docker  chooses file path
+
+docker run -it  --mount -p port:port type = volume,src=volume_name ,target=<user/local/data> image id
+
+//docker bind : user chooses 
+
+docker run -it  --mount -p port:port type = bind,source="$(pwd)"/path> ,target=absolut_path  image
+
+//volume 
+
+--mount type =volume, source=volume_name ,target=path image 
+
+
+//docker swarm
+
+# to create swarm 
+docker swarm init --advertise-addr <manager_ip>
+
+
+docker info -> get the current status of docker swarm
+
+docker node ls -> node list
+
+//Run the below command into the machine where you want to run worker node
+
+docker swarm join <token>
+
+//create services in the manager node 
+
+docker service create --replicas <num of replicas>  --name <service_name> <image_name>
+
+//to inspect a service
+
+docker service inspect <service_name>
+
+//to see which nodes are running which services
+docker service ps <service_name>
+
+
