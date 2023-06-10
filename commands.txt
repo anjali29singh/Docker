@@ -115,4 +115,12 @@ docker service inspect <service_name>
 //to see which nodes are running which services
 docker service ps <service_name>
 
+//to push image to docker hub
+
+create repository in docker hub
+
+docker tag image_name <dockerhub_username>/image_name
+
+docker push <username of dockerhub>/image_name
+
 
