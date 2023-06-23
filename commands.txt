@@ -124,3 +124,8 @@ docker tag image_name <dockerhub_username>/image_name
 docker push <username of dockerhub>/image_name
 
 
+//start mysql server 
+docker run -it --name <container_name>  -e MYSQL_ROOT_PASSWORD=<password> -d mysql
+
+
+mysql -h <mysql server ip address> -u -p <password>
